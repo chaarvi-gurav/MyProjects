@@ -1,0 +1,16 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 20px;
+}
+#map {
+  height: 400px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+#results {
+  margin-top: 20px;
+}
+.pass {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
