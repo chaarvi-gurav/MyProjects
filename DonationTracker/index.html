@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header> <h1>Donation Tracker</h1>
+    <nav>
+        <button onclick="showSection('donationSection')">Monthly Donation</button>
+        <button onclick="showSection('reportSection')">Donation Report</button>
+    </nav>
+    </header>
+    <section id="donationSection">
+        <h2>Monthly Donation Form</h2>
+            <form id="donationForm">
+            <div>
+                <label for="month">Month:</label>
+                <input type="month" id="month" required>
+            </div>
+            <div>
+                <label for="grade">Grade:</label>
+                <select id="grade" required>
+                    <option value="">Select Grade</option>
+                    <option value="1">1st Grade</option>
+                    <option value="2">2nd Grade</option>
+                    <option value="3">3rd Grade</option>
+                    <option value="4">4th Grade</option>
+                    <option value="5">5th Grade</option>
+                    <option value="6">6th Grade</option>
+                    <option value="7">7th Grade</option>
+                    <option value="8">8th Grade</option>
+                    <option value="9">9th Grade</option>
+                    <option value="10">10th Grade</option>
+                    <option value="11">11th Grade</option>
+                    <option value="12">12th Grade</option>
+                </select>
+            </div>
+            <div>
+                <label for="item">Donation Item:</label>
+                <select id="item" required>
+                    <option value="">Select Item</option>
+                </select>
+            </div>
+            <div>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="0" step="0.01" required>
+            </div>
+            <div>
+                <label for="unit">Unit:</label>
+                <select id="unit">
+                    <option value="kg">Kg</option>
+                    <option value="litre">Litre</option>
+                    <option value="piece">Piece</option>
+                    <option value="amount">Amount</option>
+                </select>
+            </div>
+            <button type="submit">Save Donation</button>
+        </form>
+        <p id="message"></p>
+    </section>
+    <!-- Report  -->
+    <section id="reportSection" style="display:none;">
+        <h2>Donation Report</h2>
+        <div>
+            <label for="reportMonth">Select Month:</label>
+            <input type="month" id="reportMonth">
+            <button onclick="generateReport()">Generate Report</button>
+        </div>
+        <br>
+        <table id="reportTable">
+            <thead>
+                <tr>
+                    <th>Grade</th>
+                    <th>Item</th>
+                    <th>Total Quantity</th>
+                    <th>Unit</th>
+                </tr>
+            </thead>
+            <tbody id="reportBody">
+            </tbody>
+        </table>
+        <h3>
+            Grand Total:
+            <span id="grandTotal">0</span>
+        </h3>
+    </section>
+    <script src="donationTracker.js"></script>
+</body>
+</html>
